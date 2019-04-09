@@ -77,6 +77,7 @@ class Graph(object):
                 break
             func(l)
         fin.close()
+        print(nx.info(self.G))
         self.encode_node()
 
     def read_node_label(self, filename):

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06c299a8-624a-415e-90cf-31a27296e6b7" name="Default Changelist" comment="" />
+    <list default="true" id="06c299a8-624a-415e-90cf-31a27296e6b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/sunxiaoyu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_to_embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph_to_embedding.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,10 +21,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../TCNE/build_graph.py">
+        <entry file="file://$PROJECT_DIR$/build_graph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="85" selection-start-line="85" selection-end-line="85" selection-end-column="26" />
+            <state relative-caret-position="95">
+              <caret line="5" selection-start-line="5" selection-end-line="6" selection-end-column="83" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -26,10 +33,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../TCNE/main.py">
+        <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            <state relative-caret-position="266">
+              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -38,22 +45,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../TCNE/graph_to_embedding.py">
+        <entry file="file://$PROJECT_DIR$/graph_to_embedding.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-              <folding>
-                <element signature="e#1#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../TCNE/src/line.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="-330">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -62,13 +57,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../TCNE/src/node2vec.py">
+        <entry file="file://$PROJECT_DIR$/src/line.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="100">
+              <caret line="202" column="8" selection-start-line="202" selection-start-column="8" selection-end-line="202" selection-end-column="8" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graph.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="683">
+              <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+              <folding>
+                <element signature="e#48#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/node2vec.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="650">
+              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/typing.pyi">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="348" column="37" selection-start-line="348" selection-start-column="29" selection-end-line="348" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -98,16 +126,25 @@
       <find>update</find>
       <find>data/</find>
       <find>args.</find>
+      <find>args[&quot;window_size&quot;]</find>
+      <find>args[&quot;workers&quot;]</find>
+      <find>args[&quot;output&quot;]</find>
+      <find>args[&quot;epochs&quot;]</find>
+      <find>nodes</find>
     </findStrings>
     <replaceStrings>
       <replace>G</replace>
       <replace>data/WebKB</replace>
       <replace>data/WebKB/</replace>
       <replace>args[&quot;</replace>
+      <replace>window_size</replace>
+      <replace>nb_workers</replace>
+      <replace>output_path</replace>
+      <replace>nb_epochs</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../TCNE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -126,16 +163,17 @@
         <option value="$PROJECT_DIR$/pre_emb_proc.py" />
         <option value="$PROJECT_DIR$/build_graph.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.py" />
-        <option value="$PROJECT_DIR$/../TCNE/main.py" />
-        <option value="$PROJECT_DIR$/../TCNE/graph_to_embedding.py" />
+        <option value="$PROJECT_DIR$/src/graph.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/graph_to_embedding.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="872" />
-    <option name="y" value="-4" />
-    <option name="width" value="808" />
-    <option name="height" value="1054" />
+    <option name="x" value="320" />
+    <option name="y" value="57" />
+    <option name="width" value="798" />
+    <option name="height" value="767" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -148,13 +186,13 @@
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="TCuWE" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="TCNE" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/PycharmProjects/TCNE" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
-              <item name="TCuWE" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="TCNE" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/PycharmProjects/TCNE" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="data" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -189,10 +227,10 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -208,28 +246,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.build_graph">
-    <configuration name="Test_read_time" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="TCuWE" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test_read_time.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.graph_to_embedding">
     <configuration name="build_graph" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TCuWE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -264,6 +281,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chophead.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="graph_to_embedding" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TCuWE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/graph_to_embedding.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -316,11 +354,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.graph_to_embedding" />
         <item itemvalue="Python.build_graph" />
         <item itemvalue="Python.quick_test" />
         <item itemvalue="Python.parse_wiki_para" />
         <item itemvalue="Python.chophead" />
-        <item itemvalue="Python.Test_read_time" />
       </list>
     </recent_temporary>
   </component>
@@ -350,16 +388,16 @@
     <frame x="67" y="25" width="1613" height="1025" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49910232" visible="true" weight="0.18490566" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49910232" visible="true" weight="0.18490566" />
       <window_info id="Structure" order="1" sideWeight="0.50089765" side_tool="true" weight="0.18490566" />
       <window_info id="Favorites" order="2" sideWeight="0.50089765" side_tool="true" weight="0.18490566" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36197022" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20321469" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39862543" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="6" visible="true" weight="0.3295063" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.3295063" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3298969" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3298969" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -413,6 +451,20 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -423,7 +475,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../TCNE/parse_wiki.py</url>
+          <url>file://$PROJECT_DIR$/parse_wiki.py</url>
           <line>43</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -462,9 +514,7 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/wikipedia/article_categories_en_head.nq">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/wikipedia/article_categories_en_head.nq" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -563,7 +613,7 @@
     <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/nquadsdealer.py" />
     <entry file="file://$PROJECT_DIR$/chophead.py" />
-    <entry file="file://$PROJECT_DIR$/../TCNE/parse_wiki.py">
+    <entry file="file://$PROJECT_DIR$/parse_wiki.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
           <caret line="44" selection-start-line="44" selection-end-line="44" />
@@ -573,7 +623,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../TCNE/data_cleaner.py">
+    <entry file="file://$PROJECT_DIR$/data_cleaner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357">
           <caret line="211" column="19" selection-start-line="211" selection-start-column="19" selection-end-line="211" selection-end-column="19" />
@@ -585,7 +635,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../TCNE/parse_wiki_para.py">
+    <entry file="file://$PROJECT_DIR$/parse_wiki_para.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="57" selection-start-line="57" selection-end-line="57" />
@@ -595,7 +645,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../TCNE/pre_emb_proc.py">
+    <entry file="file://$PROJECT_DIR$/pre_emb_proc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-84">
           <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
@@ -605,7 +655,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../TCNE/build_graph_wiki.py">
+    <entry file="file://$PROJECT_DIR$/build_graph_wiki.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-114">
           <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
@@ -628,55 +678,69 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_4.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="202" column="8" selection-start-line="202" selection-start-column="8" selection-end-line="202" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TCNE/build_graph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="85" selection-start-line="85" selection-end-line="85" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TCNE/src/line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TCNE/src/node2vec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TCNE/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        <state relative-caret-position="266">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../TCNE/graph_to_embedding.py">
+    <entry file="file://$PROJECT_DIR$/build_graph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="95">
+          <caret line="5" selection-start-line="5" selection-end-line="6" selection-end-column="83" />
           <folding>
-            <element signature="e#1#38#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/typing.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="348" column="37" selection-start-line="348" selection-start-column="29" selection-end-line="348" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/node2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="683">
+          <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+          <folding>
+            <element signature="e#48#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_to_embedding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
