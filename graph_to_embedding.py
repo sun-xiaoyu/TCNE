@@ -5,12 +5,12 @@ from src import line
 import time
 import os
 
-def save_embeddings(model, output_path, method, nb_workers):
+def save_embeddings(model, output_path, method, nb_workers, start):
     t2 = time.time()
     if method != "line":
-        print("running time for %s with %d workers is %f" % (method, nb_workers, t2 - t1))
+        print("\nrunning time for %s with %d workers is %f" % (method, nb_workers, t2 - start))
     else:
-        print("running time for %s is %f" % (method, t2 - t1))
+        print("\nrunning time for %s is %f" % (method, t2 - start))
     if method != 'gcn':
         print("Saving embeddings...")
         print(output_path)
@@ -29,7 +29,7 @@ method = "deepWalk"
 args["graph_format"] = 'edgelist'
 walk_length = 80
 nb_walks = 10
-emb_dim = 125
+emb_dim = 128
 window_size = 10
 nb_workers = 3
 output_path = ""
@@ -40,12 +40,8 @@ if args["graph_format"] == 'edgelist':
     g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
 
 
-for method in methods[2:]:
-    # debug: delete the line below!
-    if method == "deepWalk":
-        continue
-    t1 = time.time()
-    print(t1-t0)
+for method in methods:
+    start = time.time()
     if method == 'node2vec':
         p = 10
         q = 0.5
@@ -74,7 +70,7 @@ for method in methods[2:]:
                                       num_paths=nb_walks, dim=emb_dim,
                                       workers=nb_workers, window=window_size, dw=True)
 
-    save_embeddings(model, output_path, method, nb_workers)
+    save_embeddings(model, output_path, method, nb_workers, start)
 
 # embeddings = model.vectors
 # print(embeddings["phone"])
