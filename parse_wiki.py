@@ -5,7 +5,7 @@ import pprint
 import time
 
 def Time(s):
-    print "At %d s, " % (time.time() - start) + s
+    print("At %d s, " % (time.time() - start) + s)
 
 fpath = "wikipedia/enwiki-20181020-pages-articles-multistream.xml"
 
@@ -19,11 +19,11 @@ with open(fpath,'r') as f:
         foutpath = "cleaned_wiki/cleaned-wiki-chunk_%d.txt"%(nb_chunk)
         with open(foutpath, "w") as fout:
             chunk = f.readlines(chunk_size)
-            print len(chunk)
+            print(len(chunk))
             if not chunk:
-                print "hhh"
+                print("hhh")
                 break
-            print "chunk No (%d,%d)"%(nb_chunk, len(chunk))
+            print("chunk No (%d,%d)"%(nb_chunk, len(chunk))
             # print chunk
             # chunkstr = ''.join([s.strip() for s in chunk])
             chunkstr = ''.join(chunk)
