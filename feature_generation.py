@@ -1,5 +1,6 @@
 from sklearn import preprocessing
-import numpy as np
+from graph_to_embedding import *
+
 
 
 def get_feature_matrix(emb, corpus, combining):
@@ -35,5 +36,17 @@ def get_feature_matrix(emb, corpus, combining):
                         if word in emb.keys():
                             doc_vecs.append(emb[word])
                     x_test[i] = np.mean(doc_vecs, axis=0)
-                y_test = le.fit_transform(y_test)
-            return x_train, y_train, x_test, y_test
+                y_test = le.transform(y_test)
+            return x_train, y_train, x_test, y_test, le.classes_
+
+if __name__ == '__main__':
+    corpus = "20NG"
+    # graph_filepath = build_graph("20NG")
+    graph_filepath = "data/graphs_saved/20NG.edgelist"
+    g = Graph()
+    print("Reading...")
+    g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
+    methods = ['node2vec', 'deepWalk', 'line']
+    for method in methods[1:]:
+        emb = graph_to_embedding(g, method, corpus)
+        X_train, y_train, X_test, y_test = get_feature_matrix(emb, corpus, "avg")

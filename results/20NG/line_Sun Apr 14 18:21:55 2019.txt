@@ -1,0 +1,34 @@
+
+Features shape:(11293, 128)
+Accuracy in training set:0.8188258213052333
+Macro:(0.81598897452785, 0.8094873886910939, 0.8087786684313277, None)
+Micro:(0.8188258213052333, 0.8188258213052333, 0.8188258213052333, None)
+Accuracy in testing set:0.732828484123821
+Macro test:(0.7231329209626066, 0.7209039622599949, 0.7188328624301985, None)
+Micro test:(0.732828484123821, 0.732828484123821, 0.7328284841238208, None)
+                          precision    recall  f1-score   support
+
+             alt.atheism     0.6466    0.5737    0.6080       319
+           comp.graphics     0.6425    0.7301    0.6835       389
+ comp.os.ms-windows.misc     0.6304    0.6336    0.6320       393
+comp.sys.ibm.pc.hardware     0.5882    0.5357    0.5607       392
+   comp.sys.mac.hardware     0.6189    0.6623    0.6399       385
+          comp.windows.x     0.7937    0.7066    0.7476       392
+            misc.forsale     0.7603    0.7077    0.7331       390
+               rec.autos     0.7756    0.7873    0.7814       395
+         rec.motorcycles     0.8120    0.8467    0.8290       398
+      rec.sport.baseball     0.8805    0.8539    0.8670       397
+        rec.sport.hockey     0.9005    0.9298    0.9149       399
+               sci.crypt     0.8855    0.8788    0.8821       396
+         sci.electronics     0.6162    0.5598    0.5867       393
+                 sci.med     0.8205    0.8081    0.8142       396
+               sci.space     0.7933    0.8477    0.8196       394
+  soc.religion.christian     0.6764    0.8769    0.7637       398
+      talk.politics.guns     0.6413    0.8104    0.7160       364
+   talk.politics.mideast     0.8950    0.8617    0.8780       376
+      talk.politics.misc     0.6250    0.5323    0.5749       310
+      talk.religion.misc     0.4600    0.2749    0.3441       251
+
+               micro avg     0.7328    0.7328    0.7328      7527
+               macro avg     0.7231    0.7209    0.7188      7527
+            weighted avg     0.7304    0.7328    0.7288      7527

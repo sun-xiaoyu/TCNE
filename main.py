@@ -9,7 +9,7 @@ from src.graph import Graph
 import build_graph
 from graph_to_embedding import *
 from feature_generation import *
-
+import pickle
 
 if __name__ == '__main__':
     corpus = "20NG"
@@ -19,16 +19,24 @@ if __name__ == '__main__':
     print("Reading...")
     g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
     methods = ['node2vec', 'deepWalk', 'line']
-    for method in methods[1:]:
+    for method in methods[:1]:
         emb = graph_to_embedding(g, method, corpus)
-        X_train, y_train, X_test, y_test = get_feature_matrix(emb, corpus, "avg")
+        X_train, y_train, X_test, y_test, categories = get_feature_matrix(emb, corpus, "avg")
 
-        svc = svm.LinearSVC()
-        parameters = [{'C': [0.01, 0.1, 1, 10, 100, 1000]}]
-        clf = GridSearchCV(svc, parameters, n_jobs=-1, cv=10)
-        print("Training the classifier...")
-        clf.fit(X_train,y_train)
-        forest = clf.fit(X_train, y_train)
+        fmodelpath = "data/model_saved/%s_128.model" % method
+        if os.path.exists(fmodelpath):
+            with open(fmodelpath, "rb") as fmodel:
+                forest = pickle.load(fmodel)
+        else:
+            svc = svm.LinearSVC()
+            parameters = [{'C': [0.01, 0.1, 1, 10, 100, 1000]}]
+            clf = GridSearchCV(svc, parameters, n_jobs=-1, cv=10)
+            print("Training the classifier...")
+            clf.fit(X_train,y_train)
+            forest = clf.fit(X_train, y_train)
+            with open(fmodelpath ,"wb") as fmodel:
+                pickle.dump(forest, fmodel)
+
         pred_train = forest.predict(X_train)
 
         # training score
@@ -41,7 +49,6 @@ if __name__ == '__main__':
         report = "\nFeatures shape:" + str(X_train.shape) + "\n"
         report += '\n'.join([acc, mac, mic])
         path_results = "results/" + corpus + "/" + method + "_" + time.asctime(time.localtime(time.time())) + '_'
-        print(report)
 
         pred_test = forest.predict(X_test)
 
@@ -53,7 +60,9 @@ if __name__ == '__main__':
         mic = "Micro test:" + str(metrics.precision_recall_fscore_support(y_test, pred_test, average='micro'))
         met = metrics.classification_report(y_test, pred_test, target_names=categories, digits=4)
         report += '\n'+'\n'.join([acc, mac, mic, met])
-        path_results = "results/" + corpus + "/" + method + "_" + time.asctime(time.localtime(time.time())) + '_'
+
+        print(report)
+        path_results = "results/" + corpus + "/" + method + "_" + time.asctime(time.localtime(time.time())) + '.txt'
         with open(path_results,'w') as fout:
             fout.write(report)
 
