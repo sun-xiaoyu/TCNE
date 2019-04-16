@@ -19,14 +19,17 @@ if __name__ == '__main__':
     print("Reading...")
     g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
     methods = ['node2vec', 'deepWalk', 'line']
-    for method in methods[:1]:
+    combining = 'avg'
+    combining = 'w_avg'
+    for method in methods[1:]:
         emb = graph_to_embedding(g, method, corpus)
-        X_train, y_train, X_test, y_test, categories = get_feature_matrix(emb, corpus, "avg")
+        X_train, y_train, X_test, y_test, categories = get_feature_matrix(emb, corpus, combining)
 
-        fmodelpath = "data/model_saved/%s_128.model" % method
+        fmodelpath = "data/model_saved/%s_%s_%s_128.model" % (corpus, method, combining)
         if os.path.exists(fmodelpath):
             with open(fmodelpath, "rb") as fmodel:
                 forest = pickle.load(fmodel)
+                print("Model read from file.")
         else:
             svc = svm.LinearSVC()
             parameters = [{'C': [0.01, 0.1, 1, 10, 100, 1000]}]
@@ -45,10 +48,10 @@ if __name__ == '__main__':
         acc = "Accuracy in training set:" + str(score)
         mac = "Macro:" + str(metrics.precision_recall_fscore_support(y_train, pred_train, average='macro'))
         mic = "Micro:" + str(metrics.precision_recall_fscore_support(y_train, pred_train, average='micro'))
+        met = metrics.classification_report(y_train, pred_train, target_names=categories, digits=4)
 
         report = "\nFeatures shape:" + str(X_train.shape) + "\n"
-        report += '\n'.join([acc, mac, mic])
-        path_results = "results/" + corpus + "/" + method + "_" + time.asctime(time.localtime(time.time())) + '_'
+        report += '\n'.join([acc, mac, mic, met])
 
         pred_test = forest.predict(X_test)
 
@@ -62,7 +65,7 @@ if __name__ == '__main__':
         report += '\n'+'\n'.join([acc, mac, mic, met])
 
         print(report)
-        path_results = "results/" + corpus + "/" + method + "_" + time.asctime(time.localtime(time.time())) + '.txt'
+        path_results = "results/%s_%s_%s_128.txt" % (corpus, method, combining)
         with open(path_results,'w') as fout:
             fout.write(report)
 
