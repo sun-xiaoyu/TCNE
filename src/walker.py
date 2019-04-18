@@ -42,13 +42,12 @@ class BasicWalker:
         nodes = list(G.nodes())
         print('Walk iteration:')
         for walk_iter in range(num_walks):
-            # pool = multiprocessing.Pool(processes = 4)
+            # pool = multiprocessing.Pool(processes = 20)
             print(str(walk_iter+1), '/', str(num_walks))
             random.shuffle(nodes)
             for node in nodes:
                 # walks.append(pool.apply_async(deepwalk_walk_wrapper, (self, walk_length, node, )))
-                walks.append(self.deepwalk_walk(
-                    walk_length=walk_length, start_node=node))
+                walks.append(self.deepwalk_walk(walk_length=walk_length, start_node=node))
             # pool.close()
             # pool.join()
         # print(len(walks))

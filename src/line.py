@@ -205,6 +205,7 @@ class LINE(object):
         self.order = order
         self.best_result = 0
         self.vectors = {}
+        tf.reset_default_graph()
         if order == 3:
             self.model1 = _LINE(graph, rep_size/2, batch_size,
                                 negative_ratio, order=1)
