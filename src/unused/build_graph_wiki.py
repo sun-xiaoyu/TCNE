@@ -36,13 +36,13 @@ for i in range(1,nb_chunk+1):
                         else:
                             G.edge[word][next_word]['weight'] += 1
                     except:
-                        print "aaa"
+                        print("aaa")
     if i %1 == 0:
         Time("%d chunk dealt." % i)
-        print nx.info(G)
+        print(nx.info(G))
 
 # print len(G.node)
-print nx.info(G)
+print(nx.info(G))
 # print list(G.nodes())[1:10]
 # print list(G.edges())[1:10]
 Time("Graph built")

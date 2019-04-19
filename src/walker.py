@@ -2,6 +2,7 @@ from __future__ import print_function
 import random
 import numpy as np
 import multiprocessing
+from tqdm import tqdm
 
 
 def deepwalk_walk_wrapper(class_instance, walk_length, start_node):
@@ -10,17 +11,17 @@ def deepwalk_walk_wrapper(class_instance, walk_length, start_node):
 
 class BasicWalker:
     def __init__(self, G, workers):
-        self.G = G.G
-        self.node_size = G.node_size
-        self.look_up_dict = G.look_up_dict
+        self.G = G
+        # self.node_size = G.node_size
+        # self.look_up_dict = G.look_up_dict
 
     def deepwalk_walk(self, walk_length, start_node):
         '''
         Simulate a random walk starting from start node.
         '''
         G = self.G
-        look_up_dict = self.look_up_dict
-        node_size = self.node_size
+        # look_up_dict = self.look_up_dict
+        # node_size = self.node_size
 
         walk = [start_node]
 
@@ -45,7 +46,7 @@ class BasicWalker:
             # pool = multiprocessing.Pool(processes = 20)
             print(str(walk_iter+1), '/', str(num_walks))
             random.shuffle(nodes)
-            for node in nodes:
+            for node in tqdm(nodes):
                 # walks.append(pool.apply_async(deepwalk_walk_wrapper, (self, walk_length, node, )))
                 walks.append(self.deepwalk_walk(walk_length=walk_length, start_node=node))
             # pool.close()
@@ -56,11 +57,11 @@ class BasicWalker:
 
 class Walker:
     def __init__(self, G, p, q, workers):
-        self.G = G.G
+        self.G = G
         self.p = p
         self.q = q
-        self.node_size = G.node_size
-        self.look_up_dict = G.look_up_dict
+        # self.node_size = G.node_size
+        # self.look_up_dict = G.look_up_dict
 
     def node2vec_walk(self, walk_length, start_node):
         '''
@@ -69,8 +70,8 @@ class Walker:
         G = self.G
         alias_nodes = self.alias_nodes
         alias_edges = self.alias_edges
-        look_up_dict = self.look_up_dict
-        node_size = self.node_size
+        # look_up_dict = self.look_up_dict
+        # node_size = self.node_size
 
         walk = [start_node]
 
@@ -103,7 +104,7 @@ class Walker:
         for walk_iter in range(num_walks):
             print(str(walk_iter+1), '/', str(num_walks))
             random.shuffle(nodes)
-            for node in nodes:
+            for node in tqdm(nodes):
                 walks.append(self.node2vec_walk(
                     walk_length=walk_length, start_node=node))
 
@@ -138,7 +139,7 @@ class Walker:
         G = self.G
 
         alias_nodes = {}
-        for node in G.nodes():
+        for node in tqdm(G.nodes(), desc="nodes"):
             unnormalized_probs = [G[node][nbr]['weight']
                                   for nbr in G.neighbors(node)]
             norm_const = sum(unnormalized_probs)
@@ -149,9 +150,9 @@ class Walker:
         alias_edges = {}
         triads = {}
 
-        look_up_dict = self.look_up_dict
-        node_size = self.node_size
-        for edge in G.edges():
+        # look_up_dict = self.look_up_dict
+        # node_size = self.node_size
+        for edge in tqdm(G.edges(), desc="edges"):
             alias_edges[edge] = self.get_alias_edge(edge[0], edge[1])
 
         self.alias_nodes = alias_nodes

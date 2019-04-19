@@ -1,6 +1,7 @@
 import networkx as nx
 import pickle
 import time
+import os
 
 
 def Time(s):
@@ -40,36 +41,42 @@ def build_col_graph_from_corpus(nb_chunk):
             print(nx.info(G))
 
 
-def build_col_graph_from_train(filepath,sliding_window):
+def build_col_graph_from_train(corpus, sliding_window=2):
     G = nx.Graph()
-    with open(filepath, 'r') as f:
-        docs = f.readlines()
-        print("Total number of documents: %d"%(len(docs)))
-        for doc in docs:
-            s = doc.split()
-            s = s[1:]
-            length = len(s)
-            for k, word in enumerate(s):
-                if not G.has_node(word):
-                    G.add_node(word, count=1)
-                else:
-                    G.node[word]['count'] += 1
-                    for j in range(sliding_window):
-                        try:
-                            if k + j + 1 >= length:
-                                break
-                            next_word = s[k + j + 1]
+    filepath = "data/%s/%s-train-stemmed.txt" % (corpus, corpus)
+    graph_filepath = "data/graphs_saved/%s.edgelist" % corpus
+    if os.path.exists(graph_filepath):
+        print("Reading...")
+        G = nx.read_weighted_edgelist(graph_filepath)
+    else:
+        with open(filepath, 'r') as f:
+            docs = f.readlines()
+            print("Total number of documents: %d" % (len(docs)))
+            for doc in docs:
+                s = doc.split()
+                s = s[1:]
+                length = len(s)
+                for k, word in enumerate(s):
+                    if not G.has_node(word):
+                        G.add_node(word, count=1)
+                    else:
+                        G.node[word]['count'] += 1
+                        for j in range(sliding_window):
+                            try:
+                                if k + j + 1 >= length:
+                                    break
+                                next_word = s[k + j + 1]
 
-                            if not G.has_node(next_word):
-                                G.add_node(next_word, count=0)
+                                if not G.has_node(next_word):
+                                    G.add_node(next_word, count=0)
 
-                            if not G.has_edge(word, next_word):
-                                G.add_edge(word, next_word, weight=1)
-                                # G.edge[word][next_word]['w2vec'] = 0.01
-                            else:
-                                G[word][next_word]['weight'] += 1
-                        except:
-                            print("UNKNOWN ERROR")
+                                if not G.has_edge(word, next_word):
+                                    G.add_edge(word, next_word, weight=1)
+                                    # G.edge[word][next_word]['w2vec'] = 0.01
+                                else:
+                                    G[word][next_word]['weight'] += 1
+                            except:
+                                print("UNKNOWN ERROR")
     return G
 
 # print len(G.node)
@@ -88,19 +95,16 @@ if __name__ == '__main__':
     global start
     start = time.time()
     Time("Here we go!")
-    corpus = "20NG"
-    prefix = "data/" + corpus + '/'
-    filename = "20ng-train-stemmed.txt"
-    filepath = prefix + filename
+    corpus = "webkb"
 
     # Buld graph from training data
-    G = build_col_graph_from_train(filepath,sliding_window)
+    G = build_col_graph_from_train(corpus,sliding_window)
     print(nx.info(G))
     G.name = "G"
 
     # save graph
     Time("Graph built")
-    nx.write_weighted_edgelist(G, "Graphs_saved/" + corpus + ".edgelist")
+    nx.write_weighted_edgelist(G, "data/graphs_saved/" + corpus + ".edgelist")
     Time("Graph saved in weighted edgelist.")
 
     # # save reduced graph
@@ -108,6 +112,6 @@ if __name__ == '__main__':
     # G.remove_nodes_from(nodesLowerThan5)
     # G.name = "G_reduced"
     # print(nx.info(G))
-    # nx.write_weighted_edgelist(G, "Graphs_saved/" + corpus + "_reduced.edgelist")
+    # nx.write_weighted_edgelist(G, "data/graphs_saved/" + corpus + "_reduced.edgelist")
     # Time("Reduced graph saved in weighted edgelist.")
 

@@ -2,6 +2,7 @@ from __future__ import print_function
 from src.graph import Graph
 from src import node2vec
 from src import line
+import networkx as nx
 import time
 import os
 import numpy as np
@@ -16,7 +17,7 @@ def save_embeddings(model, output_path, method, nb_workers, start):
     if method != 'gcn':
         print("Saving embeddings...")
         print(output_path)
-        # model.save_embeddings(output_path)
+        model.save_embeddings(output_path)
 
 
 def read_emb(emb_path):
@@ -31,10 +32,9 @@ def read_emb(emb_path):
     return emb
 
 
-def graph_to_embedding(g, method, corpus):
+def graph_to_embedding(g, method, corpus, emb_dim=128):
     walk_length = 80
     nb_walks = 10
-    emb_dim = 128
     window_size = 10
     nb_workers = 3
     output_path = ""
@@ -85,6 +85,7 @@ def graph_to_embedding(g, method, corpus):
 # print(embeddings["phone"])
 
 if __name__ == '__main__':
+    '''
     corpus = "20NG"
     graph_filepath = "data/graphs_saved/20NG.edgelist"
     g = Graph()
@@ -93,3 +94,7 @@ if __name__ == '__main__':
     methods = ['node2vec', 'deepWalk', 'line']
     for method in methods:
         graph_to_embedding(g, method, corpus)
+    '''
+    graph_filepath = "data/graphs_saved/webkb.edgelist"
+    g = nx.read_weighted_edgelist(graph_filepath)
+    graph_to_embedding(g,"node2vec","webkb",32)

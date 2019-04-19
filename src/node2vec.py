@@ -33,7 +33,7 @@ class Node2vec(object):
         print("Learning representation...")
         word2vec = Word2Vec(**kwargs)
         self.vectors = {}
-        for word in graph.G.nodes():
+        for word in graph.nodes():
             self.vectors[word] = word2vec.wv[word]
         del word2vec
 
