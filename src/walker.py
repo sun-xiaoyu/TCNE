@@ -11,7 +11,7 @@ def deepwalk_walk_wrapper(class_instance, walk_length, start_node):
 
 class BasicWalker:
     def __init__(self, G, workers):
-        self.G = G
+        self.G = G.G
         # self.node_size = G.node_size
         # self.look_up_dict = G.look_up_dict
 
@@ -57,9 +57,11 @@ class BasicWalker:
 
 class Walker:
     def __init__(self, G, p, q, workers):
-        self.G = G
+        self.G = G.G
         self.p = p
         self.q = q
+        self.alias_edges = {}
+        self.alias_nodes = {}
         # self.node_size = G.node_size
         # self.look_up_dict = G.look_up_dict
 
@@ -153,7 +155,15 @@ class Walker:
         # look_up_dict = self.look_up_dict
         # node_size = self.node_size
         for edge in tqdm(G.edges(), desc="edges"):
+            l = len(alias_edges)
             alias_edges[edge] = self.get_alias_edge(edge[0], edge[1])
+            if len(alias_edges) != l+1:
+                print(edge)
+                print(alias_edges[edge])
+                pass
+
+        if len(alias_edges)!=len(G.edges):
+            print("why???")
 
         self.alias_nodes = alias_nodes
         self.alias_edges = alias_edges

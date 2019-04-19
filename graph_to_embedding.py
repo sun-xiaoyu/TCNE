@@ -80,6 +80,7 @@ def graph_to_embedding(g, method, corpus, emb_dim=128):
                                       workers=nb_workers, window=window_size, dw=True)
 
     save_embeddings(model, output_path, method, nb_workers, start)
+    return model.vectors
 
 # embeddings = model.vectors
 # print(embeddings["phone"])
@@ -96,5 +97,8 @@ if __name__ == '__main__':
         graph_to_embedding(g, method, corpus)
     '''
     graph_filepath = "data/graphs_saved/webkb.edgelist"
-    g = nx.read_weighted_edgelist(graph_filepath)
+    g = Graph()
+    print("Reading...")
+    g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
+
     graph_to_embedding(g,"node2vec","webkb",32)

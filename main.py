@@ -20,9 +20,11 @@ def Time(s):
 if __name__ == '__main__':
     global start
     corpus = "20NG"
-    g = build_col_graph_from_train(corpus)
-    # g = g.subgraph(g.nodes()[:100])
-    nx.info(g)
+    graph_filepath = build_col_graph_from_train(corpus)
+    g = Graph()
+    print("Reading...")
+    g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
+
     methods = ['deepWalk', 'line','node2vec']
     combining = 'avg'
     # combining = 'w_avg'
