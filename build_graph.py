@@ -77,7 +77,10 @@ def build_col_graph_from_train(corpus, sliding_window=2):
                                     G[word][next_word]['weight'] += 1
                             except:
                                 print("UNKNOWN ERROR")
-    return G
+        Time("Graph built")
+        nx.write_weighted_edgelist(G, graph_filepath)
+        Time("Graph saved in weighted edgelist.")
+    return graph_filepath
 
 # print len(G.node)
 

@@ -19,31 +19,35 @@ def Time(s):
 
 if __name__ == '__main__':
     global start
-    corpus = "20NG"
+    methods = ['deepWalk', 'line', 'node2vec']
+    combining = 'avg'
+
+    # parameter sensitivity on emb_dim
+    # corpus = "20NG"
+    # graph_filepath = build_col_graph_from_train(corpus)
+    # g = Graph()
+    # g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
+    # for emb_dim in [4,8,16,32,64,128,256][2:]:
+    #     for method in methods:
+
+    # parameter sensitivity on p and q
+    corpus = "webkb"
     graph_filepath = build_col_graph_from_train(corpus)
     g = Graph()
-    print("Reading...")
     g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
-
-    methods = ['deepWalk', 'line','node2vec']
-    combining = 'avg'
-    # combining = 'w_avg'
-    # debug
-    for emb_dim in [4,8,16,32,64,128,256][2:]:
-        for method in methods:
-    # plist = [0.1, 0.3, 1, 3]
-    # method = 'node2vec'
-    # emb_dim = 128
-    # for p in plist:
-    #     for q in plist:
+    plist = [0.1, 0.3, 1, 3]
+    method = 'node2vec'
+    emb_dim = 128
+    for p in plist:
+        for q in plist:
             start = time.time()
             # DEBUG
             if emb_dim == 16 and method == 'line' or method == 'deepWalk':
                 continue
-            print(emb_dim, method)
+            print(corpus, emb_dim, method)
 
             # GRAPH TO EMBEDDINGS
-            report = "%d %s\n"%(emb_dim, method)
+            report = "%s %d %s\n"%(corpus, emb_dim, method)
             emb = graph_to_embedding(g, method, corpus, emb_dim)
             report += Time("node(word) embeddings trained/read from file.")
 

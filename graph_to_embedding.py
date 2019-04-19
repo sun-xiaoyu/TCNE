@@ -2,7 +2,6 @@ from __future__ import print_function
 from src.graph import Graph
 from src import node2vec
 from src import line
-import networkx as nx
 import time
 import os
 import numpy as np
@@ -51,7 +50,7 @@ def graph_to_embedding(g, method, corpus, emb_dim=128):
             print("Embedding %s read from fle." % method)
             return emb
         else:
-            model = node2vec.Node2vec(graph=g, path_length=walk_length,
+            model = node2vec.Node2vec(graph=g, corpus=corpus, path_length=walk_length,
                                       num_paths=nb_walks, dim=emb_dim,
                                       workers=3, p=p, q=q, window=window_size)
 
@@ -75,7 +74,7 @@ def graph_to_embedding(g, method, corpus, emb_dim=128):
             print("Embedding %s read from fle." % method)
             return emb
         else:
-            model = node2vec.Node2vec(graph=g, path_length=walk_length,
+            model = node2vec.Node2vec(graph=g, corpus=corpus, path_length=walk_length,
                                       num_paths=nb_walks, dim=emb_dim,
                                       workers=nb_workers, window=window_size, dw=True)
 
@@ -84,6 +83,7 @@ def graph_to_embedding(g, method, corpus, emb_dim=128):
 
 # embeddings = model.vectors
 # print(embeddings["phone"])
+
 
 if __name__ == '__main__':
     '''
@@ -96,9 +96,13 @@ if __name__ == '__main__':
     for method in methods:
         graph_to_embedding(g, method, corpus)
     '''
-    graph_filepath = "data/graphs_saved/webkb.edgelist"
+    corpus = "karate"
+    graph_filepath = "data/graphs_saved/%s.edgelist" % corpus
     g = Graph()
     print("Reading...")
-    g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
+    if corpus != "karate":
+        g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
+    else:
+        g.read_edgelist(filename=graph_filepath, weighted=False, directed=False)
 
-    graph_to_embedding(g,"node2vec","webkb",32)
+    graph_to_embedding(g, "node2vec", corpus, 32)
