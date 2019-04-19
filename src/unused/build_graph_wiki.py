@@ -7,7 +7,7 @@ nb_chunk = 6936
 sliding_window = 2
 
 def Time(s):
-    print time.asctime(time.localtime())+". At %d s, " % (time.time() - start) + s
+    print(time.asctime(time.localtime())+". At %d s, " % (time.time() - start) + s)
 
 start = time.time()
 Time("HH")
