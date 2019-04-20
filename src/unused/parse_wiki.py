@@ -1,7 +1,3 @@
-import html2text
-from data_cleaner import *
-from scrapy.utils.markup import remove_tags
-import pprint
 import time
 
 def Time(s):

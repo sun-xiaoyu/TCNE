@@ -1,7 +1,5 @@
 import html2text
-from data_cleaner import *
-from scrapy.utils.markup import remove_tags
-import pprint
+from src.unused.data_cleaner import *
 import time
 from multiprocessing import cpu_count,Pool
 from functools import partial
