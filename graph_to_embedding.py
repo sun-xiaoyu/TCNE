@@ -31,7 +31,7 @@ def read_emb(emb_path):
     return emb
 
 
-def graph_to_embedding(g, method, corpus, emb_dim=128):
+def graph_to_embedding(g, method, corpus, emb_dim=128, p=10, q=0.5):
     walk_length = 80
     nb_walks = 10
     window_size = 10
@@ -41,8 +41,6 @@ def graph_to_embedding(g, method, corpus, emb_dim=128):
 
     start = time.time()
     if method == 'node2vec':
-        p = 10
-        q = 0.5
         output_path = "data/emb_saved/%s_%s_%d_%d_%d_%d_%.2f_%.2f.emb" % \
                       (corpus, method, emb_dim, nb_walks, walk_length, window_size, p, q)
         if os.path.exists(output_path):

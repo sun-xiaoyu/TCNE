@@ -27,6 +27,8 @@ if __name__ == '__main__':
     # graph_filepath = build_col_graph_from_train(corpus)
     # g = Graph()
     # g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
+    # p = 1
+    # q = 1
     # for emb_dim in [4,8,16,32,64,128,256][2:]:
     #     for method in methods:
 
@@ -48,7 +50,7 @@ if __name__ == '__main__':
 
             # GRAPH TO EMBEDDINGS
             report = "%s %d %s\n"%(corpus, emb_dim, method)
-            emb = graph_to_embedding(g, method, corpus, emb_dim)
+            emb = graph_to_embedding(g, method, corpus, emb_dim, p, q)
             report += Time("node(word) embeddings trained/read from file.")
 
             # EMBEDDING TO FEATURE MATRIX

@@ -7,4 +7,6 @@ where am i
 note
 __pycache__/
 **/__pycache__/
+**/model_saved/
+**/graphs_saved/
 
