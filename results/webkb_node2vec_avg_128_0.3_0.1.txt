@@ -1,0 +1,34 @@
+webkb 128 node2vec
+Sat Apr 20 19:31:14 2019. At 5190 s, node(word) embeddings trained/read from file.
+Sat Apr 20 19:31:15 2019. At 5191 s, feature matrix generated
+Sat Apr 20 19:32:04 2019. At 5240 s, svm model trained/read from file
+
+Features shape:(2803, 128)
+Accuracy in training set:0.8787013913663931
+Macro:(0.8763951287512205, 0.8620923867915149, 0.8685747604321037, None)
+Micro:(0.8787013913663931, 0.8787013913663931, 0.8787013913663931, None)
+              precision    recall  f1-score   support
+
+      course     0.9535    0.9581    0.9558       620
+     faculty     0.8431    0.8027    0.8224       750
+     project     0.8377    0.7679    0.8012       336
+     student     0.8713    0.9198    0.8949      1097
+
+   micro avg     0.8787    0.8787    0.8787      2803
+   macro avg     0.8764    0.8621    0.8686      2803
+weighted avg     0.8779    0.8787    0.8777      2803
+
+Accuracy in testing set:0.8531518624641834
+Macro test:(0.84435383397431, 0.8286502357541257, 0.8350560195477998, None)
+Micro test:(0.8531518624641834, 0.8531518624641834, 0.8531518624641834, None)
+              precision    recall  f1-score   support
+
+      course     0.9238    0.9387    0.9312       310
+     faculty     0.7899    0.8342    0.8114       374
+     project     0.7887    0.6667    0.7226       168
+     student     0.8750    0.8750    0.8750       544
+
+   micro avg     0.8532    0.8532    0.8532      1396
+   macro avg     0.8444    0.8287    0.8351      1396
+weighted avg     0.8527    0.8532    0.8521      1396
+Sat Apr 20 19:32:04 2019. At 5240 s, all done.

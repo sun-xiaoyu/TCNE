@@ -1,4 +1,8 @@
-Thu Apr 18 10:15:54 2019. At 3 s, node(word) embeddings trained/read from file.Thu Apr 18 10:15:58 2019. At 6 s, feature matrix generatedThu Apr 18 10:30:45 2019. At 894 s, svm model trained/read from file
+20NG 128 deepWalk
+Sat Apr 20 11:01:50 2019. At 2 s, node(word) embeddings trained/read from file.
+Sat Apr 20 11:01:52 2019. At 5 s, feature matrix generated
+Sat Apr 20 11:01:52 2019. At 5 s, svm model trained/read from file
+
 Features shape:(11293, 128)
 Accuracy in training set:0.8244930487912866
 Macro:(0.8237174788346368, 0.8148560100110809, 0.8129489801932259, None)
@@ -59,4 +63,4 @@ comp.sys.ibm.pc.hardware     0.6171    0.5714    0.5934       392
                micro avg     0.7561    0.7561    0.7561      7527
                macro avg     0.7521    0.7432    0.7408      7527
             weighted avg     0.7557    0.7561    0.7506      7527
-Thu Apr 18 10:30:45 2019. At 894 s, all done.
+Sat Apr 20 11:01:53 2019. At 5 s, all done.

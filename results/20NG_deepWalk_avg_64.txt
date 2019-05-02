@@ -1,0 +1,66 @@
+20NG 64 deepWalk
+Sat Apr 20 10:58:21 2019. At 1714 s, node(word) embeddings trained/read from file.
+Sat Apr 20 10:58:24 2019. At 1716 s, feature matrix generated
+Sat Apr 20 11:01:47 2019. At 1919 s, svm model trained/read from file
+
+Features shape:(11293, 64)
+Accuracy in training set:0.7625962985920481
+Macro:(0.7582347957242395, 0.7502057970475273, 0.7438827363614146, None)
+Micro:(0.7625962985920481, 0.7625962985920481, 0.7625962985920481, None)
+                          precision    recall  f1-score   support
+
+             alt.atheism     0.7427    0.7396    0.7411       480
+           comp.graphics     0.6736    0.6644    0.6690       584
+ comp.os.ms-windows.misc     0.6594    0.5857    0.6204       572
+comp.sys.ibm.pc.hardware     0.5877    0.5678    0.5776       590
+   comp.sys.mac.hardware     0.6071    0.5052    0.5515       578
+          comp.windows.x     0.7591    0.8449    0.7997       593
+            misc.forsale     0.6740    0.7316    0.7016       585
+               rec.autos     0.7724    0.7542    0.7632       594
+         rec.motorcycles     0.8215    0.8545    0.8377       598
+      rec.sport.baseball     0.9118    0.9347    0.9231       597
+        rec.sport.hockey     0.9247    0.9617    0.9428       600
+               sci.crypt     0.8972    0.9092    0.9032       595
+         sci.electronics     0.6947    0.6159    0.6529       591
+                 sci.med     0.8502    0.9175    0.8826       594
+               sci.space     0.8109    0.9039    0.8549       593
+  soc.religion.christian     0.6892    0.9197    0.7880       598
+      talk.politics.guns     0.7281    0.8550    0.7865       545
+   talk.politics.mideast     0.8620    0.9078    0.8843       564
+      talk.politics.misc     0.7692    0.6452    0.7018       465
+      talk.religion.misc     0.7292    0.1857    0.2960       377
+
+               micro avg     0.7626    0.7626    0.7626     11293
+               macro avg     0.7582    0.7502    0.7439     11293
+            weighted avg     0.7594    0.7626    0.7533     11293
+
+Accuracy in testing set:0.7232629201541119
+Macro test:(0.7084906441899368, 0.7078211833311459, 0.7003725524746495, None)
+Micro test:(0.7232629201541119, 0.7232629201541119, 0.7232629201541119, None)
+                          precision    recall  f1-score   support
+
+             alt.atheism     0.6540    0.5925    0.6217       319
+           comp.graphics     0.6131    0.6967    0.6522       389
+ comp.os.ms-windows.misc     0.5982    0.5191    0.5559       393
+comp.sys.ibm.pc.hardware     0.5650    0.5434    0.5540       392
+   comp.sys.mac.hardware     0.5699    0.5403    0.5547       385
+          comp.windows.x     0.7260    0.7704    0.7475       392
+            misc.forsale     0.7079    0.6897    0.6987       390
+               rec.autos     0.8175    0.7823    0.7995       395
+         rec.motorcycles     0.8420    0.8568    0.8493       398
+      rec.sport.baseball     0.8965    0.8942    0.8953       397
+        rec.sport.hockey     0.9157    0.9524    0.9337       399
+               sci.crypt     0.8450    0.8813    0.8628       396
+         sci.electronics     0.6168    0.5776    0.5966       393
+                 sci.med     0.8195    0.8712    0.8446       396
+               sci.space     0.8101    0.8985    0.8520       394
+  soc.religion.christian     0.6434    0.8794    0.7431       398
+      talk.politics.guns     0.6286    0.8324    0.7163       364
+   talk.politics.mideast     0.8472    0.8404    0.8438       376
+      talk.politics.misc     0.5888    0.4065    0.4809       310
+      talk.religion.misc     0.4648    0.1315    0.2050       251
+
+               micro avg     0.7233    0.7233    0.7233      7527
+               macro avg     0.7085    0.7078    0.7004      7527
+            weighted avg     0.7156    0.7233    0.7133      7527
+Sat Apr 20 11:01:47 2019. At 1920 s, all done.
