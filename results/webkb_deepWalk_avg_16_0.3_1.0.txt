@@ -1,0 +1,34 @@
+webkb 16 deepWalk 0.3 1.0
+Fri May  3 19:27:44 2019. At 212 s, node(word) embeddings trained/read from file.
+Fri May  3 19:27:45 2019. At 213 s, feature matrix generated
+Fri May  3 19:28:07 2019. At 235 s, svm model trained/read from file
+
+Features shape:(2803, 16)
+Accuracy in training set:0.7731002497324295
+Macro:(0.763613430828181, 0.7333295804295195, 0.7435477338291552, None)
+Micro:(0.7731002497324295, 0.7731002497324295, 0.7731002497324295, None)
+              precision    recall  f1-score   support
+
+      course     0.9141    0.9274    0.9207       620
+     faculty     0.6621    0.7027    0.6818       750
+     project     0.6880    0.4792    0.5649       336
+     student     0.7902    0.8241    0.8068      1097
+
+   micro avg     0.7731    0.7731    0.7731      2803
+   macro avg     0.7636    0.7333    0.7435      2803
+weighted avg     0.7711    0.7731    0.7695      2803
+
+Accuracy in testing set:0.7714899713467048
+Macro test:(0.7499779225937114, 0.7221635960102516, 0.7293987660017682, None)
+Micro test:(0.7714899713467048, 0.7714899713467048, 0.7714899713467048, None)
+              precision    recall  f1-score   support
+
+      course     0.8794    0.8935    0.8864       310
+     faculty     0.6776    0.7701    0.7209       374
+     project     0.6330    0.4107    0.4982       168
+     student     0.8099    0.8143    0.8121       544
+
+   micro avg     0.7715    0.7715    0.7715      1396
+   macro avg     0.7500    0.7222    0.7294      1396
+weighted avg     0.7686    0.7715    0.7664      1396
+Fri May  3 19:28:07 2019. At 235 s, all done.

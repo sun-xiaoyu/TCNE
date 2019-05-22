@@ -1,6 +1,6 @@
 from __future__ import print_function
 from gensim.models import Word2Vec
-from . import walker
+import walker
 import json
 import os
 

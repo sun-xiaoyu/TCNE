@@ -1,5 +1,5 @@
 from sklearn import preprocessing
-from src.graph_to_embedding import *
+from graph_to_embedding import *
 import numpy as np
 
 
@@ -8,7 +8,7 @@ def get_feature_matrix(emb, corpus, combining):
     le = preprocessing.LabelEncoder()
     if combining == "avg":
         if corpus == "20NG":
-            with open("data/20NG/20ng-train-stemmed.txt") as f:
+            with open("data/20NG/20NG-train-stemmed.txt") as f:
                 collection = f.readlines()
                 n = len(collection)
                 m = emb["phone"].shape[0]
@@ -23,7 +23,7 @@ def get_feature_matrix(emb, corpus, combining):
                             doc_vecs.append(emb[word])
                     x_train[i] = np.mean(doc_vecs, axis=0)
                 y_train = le.fit_transform(y_train)
-            with open("data/20NG/20ng-test-stemmed.txt") as f:
+            with open("data/20NG/20NG-test-stemmed.txt") as f:
                 collection = f.readlines()
                 n = len(collection)
                 m = emb["phone"].shape[0]

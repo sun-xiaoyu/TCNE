@@ -5,7 +5,9 @@ import os
 
 
 def Time(s):
-    print(time.asctime(time.localtime())+". At %d s, " % (time.time() - start) + s)
+    print(time.asctime(time.localtime())
+          # +". At %d s, " % (time.time() - start)
+          + s)
 
 
 def build_col_graph_from_corpus(nb_chunk):
@@ -43,11 +45,12 @@ def build_col_graph_from_corpus(nb_chunk):
 
 def build_col_graph_from_train(corpus, sliding_window=2):
     G = nx.Graph()
+    print(os.getcwd())
     filepath = "data/%s/%s-train-stemmed.txt" % (corpus, corpus)
     graph_filepath = "data/graphs_saved/%s.edgelist" % corpus
     if os.path.exists(graph_filepath):
         print("Reading...")
-        G = nx.read_weighted_edgelist(graph_filepath)
+        # G = nx.read_weighted_edgelist(graph_filepath)
     else:
         with open(filepath, 'r') as f:
             docs = f.readlines()

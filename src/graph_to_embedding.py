@@ -1,7 +1,7 @@
 from __future__ import print_function
-from src.graph import Graph
-from src import node2vec
-from src import line
+from graph import Graph
+import node2vec
+import line
 import time
 import os
 import numpy as np
@@ -31,11 +31,9 @@ def read_emb(emb_path):
     return emb
 
 
-def graph_to_embedding(g, method, corpus, emb_dim=128, p=0.3, q=1):
-    walk_length = 80
-    nb_walks = 10
+def graph_to_embedding(g, method, corpus, emb_dim=128, p=1, q=1, walk_length=80, nb_walks=10):
     window_size = 10
-    nb_workers = 3
+    nb_workers = 25
     output_path = ""
     model = None
 
@@ -50,7 +48,7 @@ def graph_to_embedding(g, method, corpus, emb_dim=128, p=0.3, q=1):
         else:
             model = node2vec.Node2vec(graph=g, corpus=corpus, path_length=walk_length,
                                       num_paths=nb_walks, dim=emb_dim,
-                                      workers=3, p=p, q=q, window=window_size)
+                                      workers=nb_workers, p=p, q=q, window=window_size)
 
     elif method == 'line':
         order = 3

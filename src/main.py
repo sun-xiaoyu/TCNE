@@ -1,8 +1,8 @@
 from sklearn import svm, metrics
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import GridSearchCV
-from src.build_graph import build_col_graph_from_train
-from src.feature_generation import *
+from build_graph import build_col_graph_from_train
+from feature_generation import *
 import pickle
 
 def Time(s):
@@ -19,30 +19,33 @@ if __name__ == '__main__':
     # parameter sensitivity on emb_dim
     corpus = "20NG"
     # corpus = "webkb"
-    # graph_filepath = build_col_graph_from_train(corpus)
-    # g = Graph()
-    # g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
-    # p = 1
-    # q = 1
-    # for emb_dim in [4,8,16,32,64,128,256,300, 512, 1024][7:]:
-    #     for method in methods:
-    #
-    # parameter sensitivity on p and q
-    corpus = "webkb"
     graph_filepath = build_col_graph_from_train(corpus)
     g = Graph()
     g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
-    plist = [0.1, 0.3, 1, 3, 10]
-    method = 'node2vec'
-    emb_dim = 128
-    for p in plist[:1]:
-        for q in plist[:1]:
+    p = 0.3
+    q = 1
+    for emb_dim in [4,8,16,32,64,128,256,300, 512, 1024, 2048, 4096, 8192][10:]:
+        for method in methods[:2]:
+    #
+    # parameter sensitivity on p and q
+    # corpus = "webkb"
+    # graph_filepath = build_col_graph_from_train(corpus)
+    # g = Graph()
+    # g.read_edgelist(filename=graph_filepath, weighted=True, directed=False)
+    # plist = [0.1, 0.3, 1, 3, 10]
+    # method = 'node2vec'
+    # emb_dim = 128
+    # for p in plist[:1]:
+    #     for q in plist[:1]:
             start = time.time()
             path_results = "results/%s_%s_%s_%d_%.1f_%.1f.txt" % (corpus, method, combining, emb_dim, p, q)
             if os.path.exists(path_results):
                 continue
 
-            print(corpus, emb_dim, method,p, q)
+            if method == 'node2vec':
+                print(corpus, emb_dim, method, p, q)
+            else:
+                print(corpus, emb_dim, method)
 
             # GRAPH TO EMBEDDINGS
             report = "%s %d %s %.1f %.1f\n" % (corpus, emb_dim, method, p, q)
